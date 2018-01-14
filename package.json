@@ -1,0 +1,11 @@
+{
+  "name": "scannerserver",
+  "version": "1.0.0",
+  "description": "Project that can scann a papper in both faces and share this photos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JoeFerneyMedina,MichelPedraza",
+  "license": "ISC"
+}
