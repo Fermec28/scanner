@@ -5,12 +5,20 @@ var exec= require('child_process').exec;
 var app= express();
 app.use(express.static(path.join(__dirname,'public')));
 
-app.get('/scanner/:nombre/:num',function(req,res){
+app.get('/scanner/:nombre',function(req,res){
 	//req.params.num	
-	//Proceso de tomar fotos 	
-	exec("python TomaFoto.py "+req.params.nombre+" "+req.params.num,function(err,stdout){
+	//Proceso de tomar fotos 
+	res.setHeader('Content-Type', 'application/json');	
+	exec("python TomaFoto.py "+req.params.nombre+" "+1,function(err,stdout){
+		response={}
+		
  		if(err){console.log(err); }
-		console.log(stdout); 			
+		//console.log(stdout);
+		for ( i=0; i<1; i++){
+	  		response[req.params.nombre]= {"foto1": "/"+req.params.nombre+(i+1)+"-0.jpeg",						
+					   "foto2":  "/"+req.params.nombre+(i+1)+"-1.jpeg"}					
+		}				
+    		res.send(response);		
 		});	
 });
 
@@ -31,8 +39,8 @@ app.listen(8080,function(){
 	  ( ejecutar c comando ya programado en python ver carpeta publica) 100%
 	respuesta con json desde python. estudiar la estructura json
 --Automatizar el proceso 20%
---Pensar el JSON de respuesta donde contendra la ruta de las imagenes
+--Pensar el JSON de respuesta donde contendra la ruta de las imagenes 100%
 --Ver Task en Python para la lectura de sensores 
 	Manejo de sensor de Distancia 10
-"en json se entregara errores", el entregara el nombre del sujeto y la cantidad de Fotos a realizar
+
 */

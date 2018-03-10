@@ -85,7 +85,7 @@ def findPorts():
 
 if __name__ == '__main__':
     p = Port()
-    print p.test_ports()
+    #print p.test_ports()
     p.s.close()
-    print "test complete"
+    #print "test complete"
     

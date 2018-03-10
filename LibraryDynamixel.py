@@ -81,9 +81,14 @@ def closeMotor2():
 def openMotor2():
     moveToAngle(2, 60)
 
-if __name__ == '__main__':
-    motor = 2
-    setTorqueLimit(motor, 100)
-    setSpeedLimit(motor, 50)
+#if __name__ == '__main__':
+    #motor = 2
+    #setTorqueLimit(motor, 100)
+    #setSpeedLimit(motor, 20)
     #moveCenter(2)
-    moveToAngle(motor, 200)
+    #moveToAngle(motor, 300)
+
+#    for x in [70,120,75,120,75,120,75]:
+ #       moveToAngle(motor, x)
+ #       time.sleep(0.5)
+ #       print (x)
