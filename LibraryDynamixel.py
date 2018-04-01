@@ -70,23 +70,28 @@ def moveToAngle(dyna_id, angle):
     moveDyna(dyna_id, goal_pos)
 
 def closeMotor1():
-    moveToAngle(1, 60)
+    moveToAngle(1, 300)
 
 def openMotor1():
-    moveToAngle(1, 150)
+    moveToAngle(1, 100)
 
 def closeMotor2():
-    moveToAngle(2, 150)
+    moveToAngle(2, 300)
 
 def openMotor2():
-    moveToAngle(2, 60)
+    moveToAngle(2, 0)
 
-#if __name__ == '__main__':
-    #motor = 2
-    #setTorqueLimit(motor, 100)
-    #setSpeedLimit(motor, 20)
+def initialState():
+    closeMotor1()
+    closeMotor2()
+    
+
+if __name__ == '__main__':
+    motor = 1
+    setTorqueLimit(motor, 100)
+    setSpeedLimit(motor, 20)
     #moveCenter(2)
-    #moveToAngle(motor, 300)
+    moveToAngle(motor, 100)
 
 #    for x in [70,120,75,120,75,120,75]:
  #       moveToAngle(motor, x)
